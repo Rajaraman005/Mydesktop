@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GOOGLE</title>
+    <link rel="shortcut icon" href="./images/su.jfif" type="image/x-icon" />
+    <link rel="stylesheet" href="google.css" />
+  </head>
+  <body>
+    <input
+      type="text"
+      id="search"
+      class="ser"
+      placeholder="MR.AJ"
+      x-webkit-speech
+    />
+    <ul class="search-results"></ul>
+
+    <div class="imges">
+      <video
+        src="./images/yt.mp4"
+        autoplay
+        muted
+        loop
+        id="yt"
+        onclick="yt()"
+      ></video>
+      <img src="./images/git.png" alt="github" onclick="git()" />
+      <img src="./images/gpt.jfif" alt="chatgpt" onclick="gpt()" />
+      <img src="./images/codepen.png" alt="codepen" onclick="pen()" />
+    </div>
+
+    <script>
+      function yt() {
+        window.location.href = "https://www.youtube.com/";
+      }
+      function git() {
+        window.location.href = "https://github.com/";
+      }
+      function gpt() {
+        window.location.href = "https://chat.openai.com/auth/login";
+      }
+      function pen() {
+        window.location.href = "https://codepen.io/";
+      }
+      const input = document.querySelector(".ser");
+
+      input.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+          const searchTerm = input.value;
+          const searchUrl = `https://www.google.com/search?q=${searchTerm}`;
+          window.location.href = searchUrl;
+        }
+      });
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>
